@@ -10,14 +10,41 @@ html, body {
 
 body {
   display: flex;  
+  box-sizing: border-box;
+}
+
+html {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .leftsidebar {
   position: relative;
-  width: 40%;
-  overflow: hidden;
-  height: 100vh;  
+  width: 35%;  
+  height: 100vh;
+  flex-shrink: 0; 
+}
+
+.leftsidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100vh;
+  overflow: hidden;  
+}
+
+.leftsidebar-wrapper > p {
+  font-family: sans-serif;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.7rem;
+}
+
+.leftsidebar-wrapper > p > a {
+  color: white;
 }
 
 .mountain {  
@@ -29,32 +56,156 @@ body {
 
 .odinlogo {
   display: flex;
-  margin-top: 30%;
+  margin-top: 35%;
   width: 100%;
-  height: 100px;
+  height: 130px;
   background-color: rgb(0, 0, 0, 0.4) ;  
   position: absolute;
-  justify-content: center;
+  justify-content: center;  
+  align-items: center;
+}
+
+.odinlogo > img {
+  height: 115px;  
 }
 
 .odinlogo > p {  
-  color: white;
-  align-self: center;
+  color: white;  
   font-family: Norse;
-  font-size: 5rem;
-  padding: 20px;
+  font-size: 5.2rem;
+  padding: 10px;
 }
 
-.leftsidebar > p {
+.rightsidebar { 
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;  
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.header{  
+  border-right: 1px solid transparent; 
+  width: 100%; 
+  /* height: 35%;   */
+  background-color: rgb(245, 245, 245);
+  padding-top: 300px; 
+  position: relative;
+}
+
+.header > div > p {
+  width: 650px;
+  font-size: 1.3rem;
+  font-weight: bold;
   font-family: sans-serif;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 0.7rem;
+  flex-shrink: 1;
 }
 
-.leftsidebar > p a {
+.header > div{  
+  /* margin: 90px 60px 24px 70px;   */
+  position: absolute;  
+  margin-left: 70px; 
+  bottom: 10%; 
+}
+
+.form-section {  
+  /* height: 30%; */
+  box-shadow: 0px 3px 10px rgb(215, 215, 215);
+  z-index: 1;
+  padding: 15px 0px 30px 0px;
+}
+
+.form-container {
+  margin-left: 70px;  
+}
+
+.form-container > p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0px 0px 15px 0px;
+  padding-top: 15px;
+}
+
+label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: sans-serif;
+  color: rgb(97, 97, 97);
+  margin-bottom: 1px;
+  letter-spacing: 1px;  
+}
+
+input {
+  width: 250px;
+  height: 25px;
+  border: 2px solid lightgray;
+  border-radius: 3px;
+  margin-right: 110px;
+  margin-bottom: 15px;
+}
+
+.input-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+input:focus {
+  outline: none;
+  border-radius: 5px;
+  border-color: blue;
+  box-shadow: 3px 3px 7px 0.5px rgb(214, 212, 212) ;
+}
+
+input:invalid:user-invalid {
+  border-color: red;
+}
+
+.footer {    
+  background-color: rgb(247, 249, 250);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer div:first-child {
+  margin-left: 70px;
+  margin-top: 30px;
+  padding-bottom: 150px;
+}
+
+.btn {
+  background-color: #596D48;
   color: white;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 17px;
+  width: 230px;
+  border: 0;
+}
+
+.footer div:first-child p {
+  color: rgb(52, 54, 54);
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.footer div:first-child p a {
+  color: #596D48;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.copyright {
+  position: relative;
+  bottom: 10px;
+}
+
+.copyright p {  
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
 }
